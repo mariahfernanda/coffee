@@ -1,0 +1,17 @@
+main{
+    background-color: antiquewhite;
+    width: 100%;
+    height: 700px;
+}
+
+#frete{
+    background-color: #46240279;
+    width: 100%;
+    height: 90px;
+}
+
+#container-frete{
+    background-color: #462402;
+    width: 100%;
+    height: 90px;
+}
