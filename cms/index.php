@@ -18,6 +18,7 @@
              <input type="password" name="password" id="password" placeholder="Digite sua senha">
              <input type="submit" value="Login">
         </form>
+        <p>ainda não tem uma conta? <a href="#">criar uma conta</a></p>
     </div>
 </body>
 </html>
