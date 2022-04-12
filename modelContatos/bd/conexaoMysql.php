@@ -3,7 +3,7 @@
 const SERVER = 'localhost';
 const USER = 'root';
 const PASSWORD = 'bcd127';
-const DATABASE = 'contatos';
+const DATABASE = 'db_inout_coffee';
 
 $resultado = conexaoMysql();
 

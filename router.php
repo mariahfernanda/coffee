@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' || $_SERVER['REQUEST_METHOD'] == 'GET')
                     if($resposta)
                     echo("<script>
                             alert('Registro Inserido com sucesso!');
-                            window.location.href = 'index.php';
+                            window.location.href = 'indexContato.php';
                         </script>");
 
                 }elseif (is_array($resposta))
@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' || $_SERVER['REQUEST_METHOD'] == 'GET')
                     {
                         echo("<script>
                                 alert('Registro Excluído com sucesso!');
-                                window.location.href = 'index.php';
+                                window.location.href = 'indexContato.php';
                             </script>");
                     }
                 }elseif(is_array($resposta))

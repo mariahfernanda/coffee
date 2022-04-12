@@ -162,21 +162,20 @@ input[type=email]:hover{
     height: 30px;
     margin-left: auto;
     margin-right: auto;
-    
+    justify-content: center;
 /*    padding: 10px;*/
 /*    box-sizing: border-box;*/
 }
-.excluir, .pesquisar, .editar{
+.excluir{
     width: 30px;
     height: 30px;
-/*    background-color: black;*/
     float: left;
     margin-left: 5px;
-    margin-right: 10px;
+    margin-right: 20px;
     cursor: pointer;
 }
 
-.excluir:hover, .editar:hover, .pesquisar:hover {
+.excluir:hover {
     transform: scale(1.3);
     transition: 1s;
 }
