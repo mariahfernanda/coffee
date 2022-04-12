@@ -2,10 +2,9 @@
 
 function inserirContato ($dadosContato)
 {
-
     if(!empty($dadosContato))
     {
-        if(!empty($dadoscontato['txtNome'])&& !empty($dadoscontato['txtCelular']) &&!empty ($dadoscontato['txtEmail']))
+        if(!empty($dadosContato['txtNome'] && !empty($dadosContato['txtCelular']) && !empty($dadosContato['txtEmail'])))
         {
             $arrayDados = array(
                 "nome"      => $dadosContato['txtNome'],
@@ -14,20 +13,50 @@ function inserirContato ($dadosContato)
                 "email"     => $dadosContato['txtEmail'],
             );
 
-            require_once('model/bd/contato.php');
+            require_once('modelContatos/bd/contato.php');
 
             if(insertContato($arrayDados))
                 return true;
             else
-            return array('idErro' =>1,
-                         'message' => 'Não foi possivel inserir os dados no Banco de Dados');
-
+                return array ('idErro' => 1,
+                              'message' => 'Não foi possivel inserir os dados no Banco de Dados');                     
         }
-            else
-                return array('idErro' => 2, 'message'=> 'Existem compos origatório que não foram preechidos'); 
+        else
+            return array ('idErro' => 2,
+                          'message'=> 'Existem campos obrigatório que não foram preechidos');
     }
-
-        
 }
+
+function excluirContato($id)
+{
+    if($id != 0 &&  !empty($id) && is_numeric($id))
+        {
+            require_once('modelContatos/bd/contato.php');
+
+            if(deleteContato($id))
+                return true;
+            else
+                return array('idErro'   => 3,
+                             'message'  => 'o banco de dados não pode excluír o registro.'
+                            );
+
+        }else
+        return array('idErro'   => 3,
+                     'message'  => 'Não é possível excluír o registro sem informar um id válido.'
+                    );
+}
+
+function listarContato()
+{
+    require_once('modelContatos/bd/contato.php');
+
+    $dados = selectAllContatos();
+
+    if(!empty($dados))
+         return $dados;
+    else
+        return false;
+}
+
 
 ?>

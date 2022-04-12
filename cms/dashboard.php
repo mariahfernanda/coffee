@@ -28,7 +28,7 @@
                 <div class="menu">  <a href="">Adm. de Categoria</a>   </div>
 
                 <div class="menu"> <img src="./img/telefone.png" width="25px" height="25px"> </div>
-                <div class="menu">  <a href="">Contatos</a>            </div>
+                <div class="menu">  <a href="../indexContato.php">Contatos</a>            </div>
 
                 <div class="menu"> <img src="./img/usuario.png" width="25px" height="25px"> </div>
                 <div class="menu">  <a href="">Usuários</a>            </div>
