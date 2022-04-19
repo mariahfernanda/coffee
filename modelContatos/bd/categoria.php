@@ -1,80 +1,83 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-<header>
-        <nav class="titulo-site">
-            <h1>CMS InOut Coffee</h1>
-            <h4>Gerenciamento de Conteúdo do Site</h4>
-        </nav>
-        <img src="./img/logoCoffee.png" alt="">
-    </header>
-    <main>
-        <nav class="selecao">
-            <div class="itens">
-                <div class="menu"> <img src="../img/cart-add-regular-24.png" width="30px" height="30px"> </div>
-                <div class="menu">  <a href="">Adm. Produtos</a>       </div>
+<?php
 
-                <div class="menu"> <img src="./img/categoria.png" width="25px" height="25px"> </div>
-                <div class="menu">  <a href="">Adm. de Categoria</a>   </div>
+require_once('conexaoMysql.php');
 
-                <div class="menu"> <img src="./img/telefone.png" width="25px" height="25px"> </div>
-                <div class="menu">  <a href="../indexContato.php">Contatos</a>            </div>
+function insertCategoria($dadosCategoria)
+{
+    $statusResposta = (boolean) false;
 
-                <div class="menu"> <img src="./img/usuario.png" width="25px" height="25px"> </div>
-                <div class="menu">  <a href="">Usuários</a>            </div>
+    $conexao = conexaoMysql();
 
-                <h3>Bem Vindo</h3>
-                <h3>Logout</h3>
-                </div>
+    $sql = "insert into tblcategoria (nomecategoria)
+            values ('".$dadosCategoria['nomecategoria']."');";
 
-        </nav>
-            
-        <nav class="sessao">
-            <h1>SESSÃO</h1>
-        </nav>
-    </main>
+    if(mysqli_query($conexao, $sql))
+       {
+           if(mysqli_affected_rows($conexao))
+           $statusResposta= true;
 
-    <div id="categoria">
-        <div id="cadastrarCategoria">
-            <h1>Cadastrar Categoria</h1>
-        </div>
+           else
+           $statusResposta= false;
+       }
+    else
+    {
+        $statusResposta= false;
+    }
 
-        <div id="cadastroInformacoes">
-            <form action="router.php?component=categorias&action=inserir" name="frmCategoria" method="post">
-                <div class="campos">
-                    <div class="cadastroInformacoesCategorias">
-                        <label>Tipo: </label>
-                    </div>
-                    <div class="cadastroEntradadaCategorias">
-                        <input type="text" name="txtTipo" value="" placeholder="Digite o tipo da Categoria" maxlength="100">
-                    </div>
-                </div>
+    fecharConexaoMysql(($conexao));
+    return $statusResposta;
+}
 
-                <div class="campos">
-                    <div class="cadastroInformacoesCategorias">
-                        <label>Fabricante: </label>
-                    </div>
-                    <div class="cadastroEntradadaCategorias">
-                        <input type="text" name="txtFabricante" value="" placeholder="Digite o tipo da Categoria" maxlength="100">
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
+function deleteCategoria($id)
+{
+    //declaracao de variavel para utilizar no return desta função
+    $statusResposta = (boolean) false;
+
+    //abre a conexão com o BD
+    $conexao = conexaoMysql();
+
+    //script para deletar um registro no BD
+    $sql = "delete from tblcategoria where idcategoria=".$id;
+
+    //valida se o script esta correto, sem erro de sintaxe e executa no BD
+    if(mysqli_query($conexao, $sql))
+    {
+        //valida se o BD teve sucesso na execução do script
+        if(mysqli_affected_rows($conexao))
+            $statusResposta = true;
+    } 
+    
+    //fechar a conexão com o BD mysql
+    fecharConexaoMysql($conexao);
+    return $statusResposta;
+        
+}
+
+function selectAllCategoria()
+{
+    $conexao = conexaoMysql();
+
+    $sql = "select * from tblcategoria order by idcategoria desc";
+
+    $result = mysqli_query($conexao, $sql);
+
+    if($result)
+    {
+        $cont = 0;
+        while ($rsDados = mysqli_fetch_assoc($result))
+        {
+            $arrayDados [$cont] = array(
+                "id"          => $rsDados['idcategoria'],
+                "nome"        => $rsDados['nomecategoria']
+            );
+            $cont++;
+        }
+        fecharConexaoMysql($conexao);
+
+        return $arrayDados;
+
+    }
+}
 
 
-
-
-
-
-    <footer>
-        <footer>Copyright 2022 © | Maria Fernanda</footer>
-    </footer>
-</body>
-</html>
+?>
