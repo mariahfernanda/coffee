@@ -20,6 +20,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./cssCategoria/style.css">
     <link rel="stylesheet" href="./cssCategoria/styleHeader.css">
+    <link rel="stylesheet" href="./cssCategoria/categoria.css">
     <title>Document</title>
 </head>
 <body>
@@ -31,25 +32,57 @@
         <img src="./img/logoCoffee.png" alt="">
     </header>
 
-    <main>
-        <nav class="selecao">
-            <div class="itens">
-                <div class="menu"> <img src="../coffee/cms/img/cart-add-regular-24.png" width="30px" height="30px"> </div>
-                <div class="menu">  <a href="">Adm. Produtos</a>       </div>
+    <div class="sidebar">
 
-                <div class="menu"> <img src="../coffee/cms/img/categoria.png" width="25px" height="25px"> </div>
-                <div class="menu">  <a href="">Adm. de Categoria</a>   </div>
+<div class="logo_content">                
+    <div class="logo">
+        <h3 class="logo-name">
+            grãos de café
+        </h3>
+    </div>
+    <div class="btn-toggle">
+        <i class='bx bx-menu'></i>
+        <span></span>
+    </div>
+</div>
 
-                <div class="menu"> <img src="../coffee/cms/img/telefone.png" width="25px" height="25px"> </div>
-                <div class="menu">  <a href="../indexContato.php">Contatos</a>            </div>
+    <ul class="nav">
+        <li>
+            <a href="../paginas/produtos.php">
+            <i class='bx bx-list-ul'></i>
+            <span>adm. produtos</span>
+            </a>
+        </li>
 
-                <div class="menu"> <img src="../coffee/cms/img/usuario.png" width="25px" height="25px"> </div>
-                <div class="menu">  <a href="">Usuários</a>            </div>
+        <li>
+            <a href="../paginas/categorias.php">
+            <i class='bx bx-category' ></i>
+            <span>adm. de categorias</span>
+            </a>
+        </li>
 
-                <h3>Bem Vindo</h3>
-                <h3>Logout</h3>
-            </div>
-        </nav>
+        <li>
+            <a href="../cms/contatos.php">
+            <i class='bx bxs-contact' ></i>
+            <span>contatos</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="../paginas/usuarios.php">
+            <i class='bx bx-user-pin' ></i>
+            <span>usuarios</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="../cms/login.php">
+            <i class='bx bx-log-out' ></i>
+            <span>log-out</span>
+            </a>
+        </li>
+    </ul>
+</div>
         
         <nav class="sessao">
             <h1>SESSÃO</h1>

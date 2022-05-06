@@ -1,0 +1,116 @@
+*{
+
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+
+body{
+
+    position: relative;
+    font-family: 'Righteous', cursive;
+
+}
+
+.sidebar{
+
+    width: 85px;
+    background-color: rgb(32, 36, 39);
+    height: 100vh;
+    position: fixed;
+
+}
+
+.sidebar.active{
+
+    width: 240px;
+}
+
+.logo_content{
+
+    height: 67px;
+    background-color: rgb(23, 26, 27);
+}
+
+.logo_content .logo{
+
+    color: white;
+    display: none;
+    background-color: rgb(23, 26, 27);
+    padding: 20px;
+
+}
+
+.logo_content .btn-toggle{
+
+    position: absolute;
+    color: whitesmoke;
+    right: 17px;
+    top: 7px;
+    font-size: 26px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.sidebar ul{
+
+    padding: 20px;
+
+}
+
+.sidebar ul li{
+
+    list-style: none;
+
+}
+
+.sidebar ul li a{
+
+    color: white;
+    text-decoration: none;
+    display: flex;
+    font-size: 14px;
+    align-items: center;
+    padding: 10px;
+    transition: .4s easy;
+}
+
+.sidebar ul li a:hover{
+
+    background-color: white;
+    color: rgb(23, 26, 27);
+    border-radius: 5px;
+
+}
+
+.sidebar ul li a i{
+
+    padding-right: 25px;
+    font-size: 24px;
+}
+
+.sidebar ul li a span{
+
+    display: none;
+
+}
+
+.sidebar.active ul li a span{
+
+    display: block;
+}
+
+.wrapper{
+
+    position: relative;
+    left: 85px;
+    width: calc(100%-85px);
+    background-color: rgb(242, 215, 206);
+    height: 100vh;
+    padding: 20px;
+}
