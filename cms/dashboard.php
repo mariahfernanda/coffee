@@ -19,36 +19,29 @@
         <img src="./img/logoCoffee.png" alt="">
     </header>
     <main>
-        <nav class="selecao">
+        <nav class="wrapper">
             <div class="itens">
-                <div class="menu"> <img src="./img/cart-add-regular-24.png" width="30px" height="30px"> </div>
-                <div class="menu">  <a href="">Adm. Produtos</a>       </div>
-
-                <div class="menu"> <img src="./img/categoria.png" width="25px" height="25px"> </div>
-                <div class="menu">  <a href="">Adm. de Categoria</a>   </div>
-
-                <div class="menu"> <img src="./img/telefone.png" width="25px" height="25px"> </div>
-                <div class="menu">  <a href="../indexContato.php">Contatos</a>            </div>
-
-                <div class="menu"> <img src="./img/usuario.png" width="25px" height="25px"> </div>
-                <div class="menu">  <a href="">Usuários</a>            </div>
-
-                <h3>Bem Vindo</h3>
-                <h3>Logout</h3>
+                <div class="box">  <a href="#">Produtos</a>       </div>
+     
+                <div class="box">  <a href="#">Categoria</a>   </div>
+             
+                <div class="box">  <a href="../indexContato.php">Contatos</a>            </div>
+            
+                <div class="box">  <a href="#">Usuários</a>            </div>
+                
+                <div class="box">  <a href="#">Sair</a>            </div>
                 </div>
 
         </nav>
             
-
-
-        
-        <nav class="sessao">
-            <h1>SESSÃO</h1>
-        </nav>
-
+        <div class="baner">
+        <!-- <img class="config" src="./img/freteBaner.png" alt=""> -->
+        </div>
     </main>
-    <footer>
-    <footer>Copyright 2022 © | Maria Fernanda</footer>
-    </footer>
+
+  
+<!-- 
+    <footer>Copyright 2022 © | Maria Fernanda</footer> -->
+
 </body>
 </html>

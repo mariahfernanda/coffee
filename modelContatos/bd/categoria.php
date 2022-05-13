@@ -9,7 +9,7 @@ function insertCategoria($dadosCategoria)
     $conexao = conexaoMysql();
 
     $sql = "insert into tblcategoria (nomecategoria)
-            values ('".$dadosCategoria['nomecategoria']."');";
+            values ('".$dadosCategoria['nome']."');";
 
     if(mysqli_query($conexao, $sql))
        {
@@ -37,7 +37,7 @@ function deleteCategoria($id)
     $conexao = conexaoMysql();
 
     //script para deletar um registro no BD
-    $sql = "delete from tblcategoria where idcategoria=".$id;
+    $sql = "delete from tblcategoria where id=".$id;
 
     //valida se o script esta correto, sem erro de sintaxe e executa no BD
     if(mysqli_query($conexao, $sql))
@@ -57,7 +57,7 @@ function selectAllCategoria()
 {
     $conexao = conexaoMysql();
 
-    $sql = "select * from tblcategoria order by idcategoria desc";
+    $sql = "select * from tblcategoria order by id desc";
 
     $result = mysqli_query($conexao, $sql);
 
@@ -67,14 +67,16 @@ function selectAllCategoria()
         while ($rsDados = mysqli_fetch_assoc($result))
         {
             $arrayDados [$cont] = array(
-                "id"          => $rsDados['idcategoria'],
-                "nome"        => $rsDados['nomecategoria']
+                "id"          => $rsDados['id'],
+                "nome"        => $rsDados['nome']
             );
             $cont++;
         }
         fecharConexaoMysql($conexao);
-
-        return $arrayDados;
+        if(isset($arrayDados))
+            return $arrayDados;
+        else
+            return false;
 
     }
 }

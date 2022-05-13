@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="./cssCategoria/style.css">
     <link rel="stylesheet" href="./cssCategoria/styleHeader.css">
     <link rel="stylesheet" href="./cssCategoria/categoria.css">
-    <title>Document</title>
+    <title>Categoria</title>
 </head>
 <body>
     <header>
@@ -85,7 +85,7 @@
 </div>
         
         <nav class="sessao">
-            <h1>SESSÃO</h1>
+            <h1>Categoria</h1>
         </nav>
     </main>
     
@@ -108,6 +108,7 @@
 
                 $listCategoria = listarCategoria();
 
+                if(listarCategoria()){
                 foreach($listCategoria as $item)
                 {
             ?>
@@ -124,6 +125,7 @@
                 </tr>
             <?php
                 }
+            }
             ?>
 
         </table>

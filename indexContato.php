@@ -26,7 +26,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./cssContato/style.css">
     <link rel="stylesheet" href="./cssContato/styleHeader.css">
-    <title>Document</title>
+    <title>Contato</title>
 </head>
 <body>
 <header>
@@ -61,7 +61,7 @@
 
         
         <nav class="sessao">
-            <h1>SESSÃO</h1>
+            <h1>Contato</h1>
         </nav>
 
     </main>
@@ -88,6 +88,7 @@
                     
                     //estrutura de repetição para retornsar os dados do array
                     //e printar na tela
+                    if($listContato){
                     foreach($listContato as $item)
                     {
                ?>
@@ -105,6 +106,8 @@
 
                 <?php
                     }
+                }
+                    
                 ?>
             </table>
         </div>
